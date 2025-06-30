@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversión de Tasas </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Ing Economica</div>
+    <nav>
+        <a href="index.html" class="active">Conversión de Tasas</a>
+        <a href="anualidades.html">Anualidades</a>
+        <a href="amortizacion.html">Tabla de Amortización</a>
+    </nav>
+    </header>
+
+    <main>
+        <section id="tasas" class="calculator-module">
+            <h2>Conversión de Tasas</h2>
+            <div class="form-group">
+                <label for="conversion-type">Tipo de Conversión</label>
+                <select id="conversion-type">
+                    <option value="">-- Selecciona una opción --</option>
+                    <option value="nominal-a-efectiva">Nominal a Efectiva</option>
+                    <option value="efectiva-a-efectiva">Efectiva a Efectiva</option>
+                    <option value="efectiva-a-nominal">Efectiva a Nominal</option>
+                </select>
+            </div>
+
+            <form id="form-nominal-a-efectiva" class="calculator-form hidden">
+                <h3>Convertir Tasa Nominal a Efectiva</h3>
+                <div class="form-group"><label>Tasa Nominal Anual (%):</label><input type="number" name="tasa" step="any" placeholder="Ej: 18" required></div>
+                <div class="form-group"><label>Período de Capitalización:</label><select name="periodo_conocido"><option value="mensual">Mensual</option><option value="bimestral">Bimestral</option><option value="trimestral">Trimestral</option><option value="cuatrimestral">Cuatrimestral</option><option value="semestral">Semestral</option><option value="anual">Anual</option></select></div>
+                <div class="form-group"><label>Período de Tasa Efectiva Deseada:</label><select name="periodo_deseado"><option value="mensual">Mensual</option><option value="bimestral">Bimestral</option><option value="trimestral">Trimestral</option><option value="cuatrimestral">Cuatrimestral</option><option value="semestral">Semestral</option><option value="anual" selected>Anual</option></select></div>
+                <button type="submit">Convertir</button>
+            </form>
+
+            <form id="form-efectiva-a-efectiva" class="calculator-form hidden">
+                <h3>Convertir Tasa Efectiva a otra Efectiva</h3>
+                <div class="form-group"><label>Tasa Efectiva Conocida (%):</label><input type="number" name="tasa" step="any" placeholder="Ej: 2.5" required></div>
+                <div class="form-group"><label>Período de Tasa Conocida:</label><select name="periodo_conocido"><option value="mensual">Mensual</option><option value="bimestral">Bimestral</option><option value="trimestral">Trimestral</option><option value="cuatrimestral">Cuatrimestral</option><option value="semestral">Semestral</option><option value="anual">Anual</option></select></div>
+                <div class="form-group"><label>Período de Tasa Deseada:</label><select name="periodo_deseado"><option value="mensual">Mensual</option><option value="bimestral">Bimestral</option><option value="trimestral">Trimestral</option><option value="cuatrimestral">Cuatrimestral</option><option value="semestral">Semestral</option><option value="anual">Anual</option></select></div>
+                <button type="submit">Convertir</button>
+            </form>
+
+            <form id="form-efectiva-a-nominal" class="calculator-form hidden">
+                <h3>Convertir Tasa Efectiva a Nominal</h3>
+                <div class="form-group"><label>Tasa Efectiva Conocida (%):</label><input type="number" name="tasa" step="any" placeholder="Ej: 34.5" required></div>
+                <div class="form-group"><label>Período de Tasa Conocida:</label><select name="periodo_conocido"><option value="mensual">Mensual</option><option value="bimestral">Bimestral</option><option value="trimestral">Trimestral</option><option value="cuatrimestral">Cuatrimestral</option><option value="semestral">Semestral</option><option value="anual" selected>Anual</option></select></div>
+                <div class="form-group"><label>Período de Capitalización de la Nominal:</label><select name="periodo_deseado"><option value="mensual">Mensual</option><option value="bimestral">Bimestral</option><option value="trimestral">Trimestral</option><option value="cuatrimestral">Cuatrimestral</option><option value="semestral">Semestral</option><option value="anual">Anual</option></select></div>
+                <button type="submit">Convertir</button>
+            </form>
+
+            <div id="resultado-tasas" class="result-box hidden"></div>
+        </section>
+    </main>
+
+    <script src="tasas.js"></script>
+</body>
+</html>

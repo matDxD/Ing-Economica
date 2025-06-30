@@ -1,0 +1,164 @@
+:root {
+    --bg-color: #1a202c;
+    --card-color: #2d3748;
+    --input-bg-color: #1a202c;
+    --text-color: #e2e8f0;
+    --label-color: #a0aec0;
+    --accent-color: #3182ce;
+    --border-color: #4a5568;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    width: 100%;
+    padding: 15px 40px;
+    background-color: var(--card-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+nav a {
+    color: var(--label-color);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+    color: var(--text-color);
+}
+
+nav a.active {
+    color: #fff;
+    border-bottom-color: var(--accent-color);
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+h2 { font-size: 2rem; margin-bottom: 30px; color: #fff; }
+h3 { font-size: 1.2rem; color: var(--label-color); margin-bottom: 20px; text-align: left; }
+
+.calculator-module {
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px 35px;
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: bold; font-size: 14px; color: var(--label-color); }
+.form-group input, .form-group select { width: 100%; padding: 12px; background-color: var(--input-bg-color); border: 1px solid var(--border-color); border-radius: 8px; box-sizing: border-box; font-size: 16px; color: var(--text-color); }
+.form-group input::placeholder { color: var(--label-color); }
+
+button { width: 100%; padding: 12px; background-color: var(--accent-color); color: #ffffff; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; }
+button:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(49, 130, 206, 0.4); }
+
+.result-box { margin-top: 25px; padding: 20px; background-color: var(--bg-color); border: 1px solid var(--border-color); border-radius: 8px; font-size: 18px; text-align: center; }
+.result-box strong { color: var(--accent-color); font-size: 24px; display: block; margin-top: 5px; }
+
+.hidden { display: none; }
+
+.anualidad-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
+.anualidad-controls button { background-color: var(--input-bg-color); border: 1px solid var(--border-color); }
+.anualidad-controls button.active { background-color: var(--accent-color); border-color: var(--accent-color); color: #fff; }
+
+.calculator-form { padding-top: 20px; border-top: 1px solid var(--border-color); }
+
+.radio-group { display: flex; gap: 20px; background-color: var(--input-bg-color); padding: 10px; border-radius: 8px; }
+.radio-group label { display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: normal; }
+.checkbox-group { display: flex; align-items: center; gap: 10px; }
+.checkbox-group input { width: auto; }
+.checkbox-group label { font-weight: normal; cursor: pointer; }
+
+/* ... (todo el código CSS anterior) ... */
+
+/* NUEVOS ESTILOS PARA LA TABLA DE AMORTIZACIÓN */
+#tabla-container {
+    margin-top: 30px;
+}
+
+.amortization-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.amortization-table thead tr {
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+    text-align: left;
+}
+
+.amortization-table th, .amortization-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.amortization-table th {
+    font-weight: bold;
+}
+
+.amortization-table tbody tr:nth-child(even) {
+    background-color: var(--input-bg-color);
+}
+
+.amortization-table tbody tr:hover {
+    background-color: #3c4a60; /* Un poco más claro para el hover */
+}
+
+/* Alinear números a la derecha para mejor legibilidad */
+.amortization-table td:not(:first-child) {
+    text-align: right;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* ... (todo el código CSS anterior) ... */
+
+/* NUEVOS ESTILOS PARA AGRUPAR INPUT Y SELECT */
+.input-group {
+    display: flex;
+    gap: 10px; /* Espacio entre el número y el selector */
+}
+
+.input-group input {
+    flex-grow: 1; /* Hace que el input de número ocupe el espacio disponible */
+}
+
+.input-group select {
+    width: 120px; /* Un ancho fijo para el selector de unidad */
+    flex-shrink: 0; /* Evita que el selector se encoja */
+}

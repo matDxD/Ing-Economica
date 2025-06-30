@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Amortización - Financia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Ing Economica</div>
+        <nav>
+            <a href="index.html">Conversión de Tasas</a>
+            <a href="anualidades.html">Anualidades</a>
+            <a href="amortizacion.html" class="active">Tabla de Amortización</a>
+            <!-- <a href="#">Casos Especiales</a> -->
+        </nav>
+    </header>
+
+    <main>
+        <section id="amortizacion" class="calculator-module">
+            <h2>Calculadora de Tabla de Amortización</h2>
+            <form id="form-amortizacion">
+                <div class="form-group">
+                    <label for="prestamo-monto">Monto del Préstamo (VP)</label>
+                    <input type="number" id="prestamo-monto" step="any" placeholder="Ej: 10000" required>
+                </div>
+                <div class="form-group">
+                    <label for="prestamo-tasa">Tasa de Interés Anual (%)</label>
+                    <input type="number" id="prestamo-tasa" step="any" placeholder="Ej: 5" required>
+                </div>
+                <div class="form-group">
+                    <label for="prestamo-plazo">Plazo del Préstamo</label>
+                    <div class="input-group">
+                        <input type="number" id="prestamo-plazo" step="any" placeholder="Ej: 5" required>
+                        <select id="prestamo-plazo-unidad">
+                            <option value="anios" selected>Años</option>
+                            <option value="meses">Meses</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="prestamo-frecuencia">Frecuencia de los Pagos</label>
+                    <select id="prestamo-frecuencia">
+                        <option value="mensual" selected>Mensual</option>
+                        <option value="bimestral">Bimestral</option>
+                        <option value="trimestral">Trimestral</option>
+                        <option value="semestral">Semestral</option>
+                        <option value="anual">Anual</option>
+                    </select>
+                </div>
+                <button type="submit">Calcular Tabla de Amortización</button>
+            </form>
+
+            <div id="tabla-container" class="hidden">
+                <h3>Tabla de Amortización</h3>
+                <table class="amortization-table">
+                    <thead>
+                        <tr>
+                            <th>Número de Pago</th>
+                            <th>Pago Total</th>
+                            <th>Intereses</th>
+                            <th>Capital</th>
+                            <th>Saldo Restante</th>
+                        </tr>
+                    </thead>
+                    <tbody id="amortizacion-body">
+                        <!-- Las filas se insertarán aquí con JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="amortizacion.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anualidades</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Ing Economica</div>
+    <nav>
+        <a href="index.html">Conversión de Tasas</a>
+        <a href="anualidades.html" class="active"> Anualidades</a> 
+        <a href="amortizacion.html">Tabla de Amortización</a>
+    </nav>
+    </header>
+
+    <main>
+        <section id="anualidades" class="calculator-module">
+            <h2>Calculadora de Anualidades</h2>
+            <div class="form-group">
+                <label>¿Qué deseas calcular?</label>
+                <div class="anualidad-controls">
+                    <button class="control-btn" data-form="form-calc-vp">Valor Presente (VP)</button>
+                    <button class="control-btn" data-form="form-calc-vf">Valor Futuro (VF)</button>
+                    <button class="control-btn" data-form="form-calc-a">Cuota (A)</button>
+                    <button class="control-btn" data-form="form-calc-n">Períodos (n)</button>
+                </div>
+            </div>
+            <div id="anualidades-forms-container">
+                <!-- Los formularios se insertarán aquí con JavaScript -->
+            </div>
+            <div id="resultado-anualidad" class="result-box hidden"></div>
+        </section>
+    </main>
+
+    <script src="anualidades.js"></script>
+</body>
+</html>
