@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interés Simple y Compuesto - Financia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Financia</div>
+        <nav>
+            <a href="index.html">Conversión de Tasas</a>
+            <a href="anualidades.html">Anualidades</a>
+            <a href="amortizacion.html">Tabla de Amortización</a>
+            <a href="interes.html" class="active">Interés Simple/Compuesto</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="interes-simple-compuesto" class="calculator-module">
+            <h2>Calculadora de Interés Simple y Compuesto</h2>
+            <p class="instructions">Compara el crecimiento de una inversión usando ambos métodos.</p>
+            <form id="form-interes">
+                <div class="form-group">
+                    <label for="interes-vp">Capital Inicial (VP)</label>
+                    <input type="number" id="interes-vp" step="any" placeholder="Ej: 1000" required>
+                </div>
+                <div class="form-group">
+                    <label for="interes-tasa">Tasa de Interés Anual (%)</label>
+                    <input type="number" id="interes-tasa" step="any" placeholder="Ej: 5" required>
+                </div>
+                <div class="form-group">
+                    <label for="interes-plazo">Plazo de la Inversión</label>
+                    <div class="input-group">
+                        <input type="number" id="interes-plazo" step="any" placeholder="Ej: 10" required>
+                        <select id="interes-plazo-unidad">
+                            <option value="anios" selected>Años</option>
+                            <option value="meses">Meses</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit">Calcular Crecimiento</button>
+            </form>
+
+            <div id="resultados-interes" class="results-container hidden">
+                <!-- Resultado para Interés Simple -->
+                <div class="result-box">
+                    <h3>Interés Simple</h3>
+                    <p id="resultado-vf-simple">$0.00</p>
+                    <small>Interés Total Ganado: <span id="total-interes-simple">$0.00</span></small>
+                </div>
+                <!-- Resultado para Interés Compuesto -->
+                <div class="result-box">
+                    <h3>Interés Compuesto</h3>
+                    <p id="resultado-vf-compuesto">$0.00</p>
+                    <small>Interés Total Ganado: <span id="total-interes-compuesto">$0.00</span></small>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="interes.js"></script>
+</body>
+</html>

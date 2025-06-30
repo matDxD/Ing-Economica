@@ -162,3 +162,38 @@ button:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(49, 130,
     width: 120px; /* Un ancho fijo para el selector de unidad */
     flex-shrink: 0; /* Evita que el selector se encoja */
 }
+
+.results-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    gap: 20px; /* Espacio entre las dos cajas de resultado */
+    margin-top: 30px;
+}
+
+.results-container .result-box {
+    margin-top: 0; /* Quitar el margen superior que tenían antes */
+}
+
+.results-container .result-box h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.results-container .result-box p {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin: 0 0 10px 0;
+}
+
+.results-container .result-box small {
+    font-size: 12px;
+    color: var(--label-color);
+}
+
+/* Hacerlo de una sola columna en pantallas pequeñas */
+@media (max-width: 600px) {
+    .results-container {
+        grid-template-columns: 1fr;
+    }
+}
