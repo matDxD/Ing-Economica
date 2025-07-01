@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repartos Proporcionales - Ingeniera Económica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">REPARTOS</div>
+        <nav>
+            <a href="index.html">Conversión de Tasas</a>
+            <a href="anualidades.html">Anualidades</a>
+            <a href="amortizacion.html">Amortización</a>
+            <a href="interes.html">Interés Simple vs Compuesto</a>
+            <a href="repartos.html" class="active">Repartos Proporcionales</a>
+            <!-- Aquí irá el enlace a "proyectos.html" cuando se cree -->
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h3>Calculadora de Repartos Proporcionales</h3>
+            <p>Define los criterios, los beneficiarios y el método para resolver problemas de repartos directos, inversos o compuestos.</p>
+
+            <form id="reparto-form">
+                <!-- PASO 1: DATOS GENERALES -->
+                <div class="form-group">
+                    <label for="montoTotal">Monto Total a Repartir:</label>
+                    <input type="number" id="montoTotal" placeholder="Ej: 252000000" required>
+                </div>
+
+                <!-- PASO 2: CRITERIOS DE REPARTO (DINÁMICO) -->
+                <h4>2. Criterios de Reparto</h4>
+                <div id="criterios-container">
+                    <!-- Los criterios se añadirán aquí dinámicamente -->
+                </div>
+                <button type="button" id="add-criterio" class="btn-secondary">(+) Añadir Criterio</button>
+
+                <!-- PASO 3: BENEFICIARIOS Y VALORES (DINÁMICO) -->
+                <h4 style="margin-top: 20px;">3. Beneficiarios y sus Índices</h4>
+                <div id="beneficiarios-container">
+                    <div id="beneficiarios-header" class="beneficiario-row header">
+                        <!-- El header se genera dinámicamente -->
+                    </div>
+                    <div id="beneficiarios-body">
+                        <!-- Las filas de beneficiarios se añadirán aquí -->
+                    </div>
+                </div>
+                <button type="button" id="add-beneficiario" class="btn-secondary">(+) Añadir Beneficiario</button>
+
+                <!-- PASO 4: MÉTODO Y ACCIÓN -->
+                <div class="form-group" style="margin-top: 25px;">
+                    <label for="metodo">Ver solución usando el método de:</label>
+                    <select id="metodo">
+                        <option value="proporciones">Proporciones (Constante K)</option>
+                        <option value="reduccion">Reducción a la Unidad</option>
+                        <option value="alicuotas">Partes Alícuotas (Fracciones)</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="calcularReparto">Calcular Reparto</button>
+            </form>
+
+            <!-- PASO 5: RESULTADOS (OCULTO INICIALMENTE) -->
+            <div id="resultado" class="resultado-container" style="display: none;">
+                <h4>Resultados del Reparto</h4>
+                <h5 id="metodo-explicacion-titulo"></h5>
+                <div id="pasos-explicacion" class="explanation-box">
+                    <!-- La explicación paso a paso se inyectará aquí -->
+                </div>
+                <h5>Resumen Final</h5>
+                <div id="tabla-resultado">
+                    <!-- La tabla de resultados finales se inyectará aquí -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Asumiendo que common.js existe para utilidades compartidas -->
+    <!-- <script src="js/common.js"></script> --> 
+    <script src="repartos.js"></script>
+
+</body>
+</html>

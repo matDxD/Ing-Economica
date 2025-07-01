@@ -197,3 +197,94 @@ button:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(49, 130,
         grid-template-columns: 1fr;
     }
 }
+
+/* =================================================================== */
+/* == ESTILOS MEJORADOS PARA EL MÓDULO DE REPARTOS PROPORCIONALES == */
+/* =================================================================== */
+
+/* Contenedor para una fila (tanto para Criterios como para Beneficiarios) */
+.criterio-row, .beneficiario-row {
+    display: flex;          /* ¡LA CLAVE! Alinea los elementos en una fila horizontal. */
+    align-items: center;    /* Centra verticalmente los elementos (input, select, botón). */
+    gap: 15px;              /* Espacio consistente y elegante entre cada elemento. */
+    margin-bottom: 12px;    /* Espacio vertical entre cada fila. */
+}
+
+/* El input para el nombre del criterio debe ocupar el espacio sobrante. */
+.criterio-row .criterio-nombre {
+    flex-grow: 1; /* Hace que este campo se expanda. */
+}
+
+
+/* --- Estilos para la Tabla de Beneficiarios (para alinear columnas) --- */
+
+/* La cabecera también es un 'flex container' para alinear sus títulos. */
+.beneficiario-row.header {
+    color: #a0aec0; /* Un color de texto más suave para la cabecera. */
+    font-weight: bold;
+    border-bottom: 1px solid #4A5568; /* Línea separadora sutil. */
+    padding-bottom: 8px;
+    margin-bottom: 15px; /* Más espacio después de la cabecera. */
+}
+
+/* Regla de ancho para la columna de Nombre (tanto en cabecera como en inputs) */
+.beneficiario-row .col-nombre {
+    flex: 2 1 180px; /* Crece el doble que las de valor, con una base de 180px. */
+}
+
+/* Regla de ancho para las columnas de Valor (tanto en cabecera como en inputs) */
+.beneficiario-row .col-valor {
+    flex: 1 1 90px; /* Crece la mitad que la de nombre, con una base de 90px. */
+}
+
+
+/* --- Estilos para los Botones de Añadir y Quitar --- */
+
+/* Botón para "Añadir Criterio" / "Añadir Beneficiario" */
+.btn-add {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px; /* Menos margen superior para que esté más cerca de su sección */
+    background-color: transparent;
+    border: 2px dashed #4A5568; /* Borde punteado, color del tema oscuro. */
+    color: #A0AEC0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-add:hover {
+    background-color: rgba(49, 130, 206, 0.1); /* Tinte azul muy sutil */
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+/* Botón para eliminar (✖) */
+.remove-btn {
+    background: transparent;
+    border: 1px solid #4A5568;
+    color: #718096;
+    width: 38px;  /* Ligeramente más grande para tocarlo fácil */
+    height: 38px;
+    border-radius: 50%; /* Círculo perfecto. */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    padding: 0;
+    flex-shrink: 0; /* Evita que el botón se encoja. */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.remove-btn:hover {
+    background-color: #c53030; /* Rojo de peligro. */
+    color: white;
+    border-color: #c53030;
+    transform: scale(1.1); /* Efecto sutil de crecimiento. */
+}
